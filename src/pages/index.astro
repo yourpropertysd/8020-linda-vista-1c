@@ -11,105 +11,100 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={`${SITE_TITLE} - San Diego`} description={SITE_DESCRIPTION} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Darker+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 	</head>
 	<body>
+		<div class="bg-gradient"></div>
+
 		<!-- Hero Section -->
 		<section class="hero">
+			<div class="hero-bg"></div>
+			<div class="hero-overlay"></div>
 			<div class="hero-content">
 				<div class="hero-label">For Sale By Owner</div>
-				<h1>Modern Living,<br />Ground Level</h1>
+				<h1>Corner Unit.<br />Huge Yard.</h1>
 				<div class="hero-address">8020 Linda Vista Rd, Unit 1C<br />San Diego, CA 92111</div>
 				<div class="hero-price">$549,000</div>
-				<a href="#contact" class="cta-button">Schedule Showing</a>
+				<a href="#contact" class="cta-button">Schedule a Showing</a>
 			</div>
-			<div class="scroll-indicator" aria-hidden="true"></div>
 		</section>
 
-		<!-- Photo Gallery Section -->
-		<section class="gallery-section" aria-label="Photo gallery">
-			<h2 class="section-title">Photo Gallery</h2>
-			<p class="section-subtitle">Explore every detail of your future home</p>
+		<!-- Photo Gallery -->
+		<section class="gallery-section">
+			<div class="section-header fade-in-view">
+				<div class="section-eyebrow">Gallery</div>
+				<h2 class="section-title">See Every Detail</h2>
+				<p class="section-subtitle">Experience the space through stunning photography</p>
+			</div>
 
 			<div class="gallery-grid">
-				<div class="gallery-item large fade-in">
-					<img src="/blog-placeholder-1.jpg" alt="Living Room" width="800" height="450" />
-					<div class="gallery-overlay">
-						<span>Living Room</span>
-					</div>
+				<div class="gallery-item large fade-in-view">
+					<img src="/blog-placeholder-1.jpg" alt="Living Room" width="1600" height="1000" />
+					<div class="gallery-label">Living Room</div>
 				</div>
-				<div class="gallery-item fade-in">
-					<img src="/blog-placeholder-2.jpg" alt="Kitchen" width="600" height="600" />
-					<div class="gallery-overlay">
-						<span>Kitchen</span>
-					</div>
+				<div class="gallery-item medium fade-in-view">
+					<img src="/blog-placeholder-2.jpg" alt="Kitchen" width="1000" height="1000" />
+					<div class="gallery-label">Kitchen</div>
 				</div>
-				<div class="gallery-item fade-in">
-					<img src="/blog-placeholder-3.jpg" alt="Primary Suite 1" width="600" height="600" />
-					<div class="gallery-overlay">
-						<span>Primary Suite 1</span>
-					</div>
+				<div class="gallery-item medium fade-in-view">
+					<img src="/blog-placeholder-3.jpg" alt="Primary Suite 1" width="1000" height="1000" />
+					<div class="gallery-label">Primary Suite 1</div>
 				</div>
-				<div class="gallery-item fade-in">
-					<img src="/blog-placeholder-4.jpg" alt="Primary Suite 2" width="600" height="600" />
-					<div class="gallery-overlay">
-						<span>Primary Suite 2</span>
-					</div>
+				<div class="gallery-item small fade-in-view">
+					<img src="/blog-placeholder-4.jpg" alt="Primary Suite 2" width="1200" height="900" />
+					<div class="gallery-label">Primary Suite 2</div>
 				</div>
-				<div class="gallery-item fade-in">
-					<img src="/blog-placeholder-5.jpg" alt="Bathroom" width="600" height="600" />
-					<div class="gallery-overlay">
-						<span>Bathroom</span>
-					</div>
+				<div class="gallery-item small fade-in-view">
+					<img src="/blog-placeholder-5.jpg" alt="Bathroom" width="1200" height="900" />
+					<div class="gallery-label">Bathroom</div>
 				</div>
-				<div class="gallery-item large fade-in">
-					<img src="/blog-placeholder-about.jpg" alt="Wrap-Around Backyard" width="800" height="450" />
-					<div class="gallery-overlay">
-						<span>Wrap-Around Backyard</span>
-					</div>
+				<div class="gallery-item large fade-in-view">
+					<img src="/blog-placeholder-about.jpg" alt="Wrap-Around Backyard" width="1600" height="1000" />
+					<div class="gallery-label">Wrap-Around Backyard</div>
 				</div>
-				<div class="gallery-item fade-in">
-					<img src="/blog-placeholder-1.jpg" alt="Parking Spots" width="600" height="600" />
-					<div class="gallery-overlay">
-						<span>Parking Spots</span>
-					</div>
+				<div class="gallery-item medium fade-in-view">
+					<img src="/blog-placeholder-1.jpg" alt="Parking Spots" width="1000" height="1000" />
+					<div class="gallery-label">Parking Spots</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- Highlights Section -->
-		<section class="highlights-section" aria-label="Key highlights">
-			<h2 class="section-title">Key Highlights</h2>
-			<p class="section-subtitle">The rare combination of luxury and convenience</p>
+		<section class="highlights-section">
+			<div class="section-header fade-in-view">
+				<div class="section-eyebrow">Highlights</div>
+				<h2 class="section-title">Rare Combination</h2>
+				<p class="section-subtitle">Luxury meets convenience in every detail</p>
+			</div>
 
 			<div class="highlights-grid">
-				<div class="highlight-card fade-in">
-					<div class="highlight-icon" aria-hidden="true">🛏️</div>
+				<div class="highlight-card glass fade-in-view">
+					<span class="highlight-icon" aria-hidden="true">🛏️</span>
 					<h3>Two Primary Suites</h3>
 					<p>Large bedrooms offering privacy and comfort, perfect for roommates or multi-generational living.</p>
 				</div>
-				<div class="highlight-card fade-in">
-					<div class="highlight-icon" aria-hidden="true">✨</div>
+				<div class="highlight-card glass fade-in-view">
+					<span class="highlight-icon" aria-hidden="true">✨</span>
 					<h3>Fully Renovated</h3>
 					<p>New LVP flooring, renovated bathrooms, modern appliances, and butcher block countertops throughout.</p>
 				</div>
-				<div class="highlight-card fade-in">
-					<div class="highlight-icon" aria-hidden="true">🌿</div>
+				<div class="highlight-card glass fade-in-view">
+					<span class="highlight-icon" aria-hidden="true">🌿</span>
 					<h3>Outdoor Paradise</h3>
 					<p>Large wrap-around backyard perfect for pets, gardening, or outdoor entertaining.</p>
 				</div>
-				<div class="highlight-card fade-in">
-					<div class="highlight-icon" aria-hidden="true">🚗</div>
+				<div class="highlight-card glass fade-in-view">
+					<span class="highlight-icon" aria-hidden="true">🚗</span>
 					<h3>Premium Parking</h3>
 					<p>Two reserved parking spots directly in front of your ground-level unit for ultimate convenience.</p>
 				</div>
-				<div class="highlight-card fade-in">
-					<div class="highlight-icon" aria-hidden="true">🪟</div>
+				<div class="highlight-card glass fade-in-view">
+					<span class="highlight-icon" aria-hidden="true">🪟</span>
 					<h3>Energy Efficient</h3>
 					<p>New dual-pane vinyl windows and patio door for comfort and reduced energy costs.</p>
 				</div>
-				<div class="highlight-card fade-in">
-					<div class="highlight-icon" aria-hidden="true">🏡</div>
+				<div class="highlight-card glass fade-in-view">
+					<span class="highlight-icon" aria-hidden="true">🏡</span>
 					<h3>Tranquil Living</h3>
 					<p>Well-planted courtyard with excellent airflow creates a peaceful, resort-like atmosphere.</p>
 				</div>
@@ -117,48 +112,57 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		</section>
 
 		<!-- About Section -->
-		<section class="about-section" aria-label="About this home">
-			<div class="about-content">
-				<h2 class="section-title">About This Home</h2>
-				<p class="about-text">
-					This updated, ground-level condo delivers the rare combination of two true primary suites and a surprisingly large outdoor footprint. Inside, you get new LVP flooring, ceiling fans throughout, new appliances, and renovated bathrooms.
-				</p>
-				<p class="about-text">
-					Outside, the wrap-around backyard space opens up real options: a proper garden, room for pets, or an extended patio setup. The courtyard is lush and calm, and your two reserved parking spots sit directly in front of the building for easy daily life.
-				</p>
+		<section class="about-section">
+			<div class="section-header fade-in-view">
+				<div class="section-eyebrow">About</div>
+				<h2 class="section-title">Your New Home</h2>
+			</div>
+
+			<div class="about-container glass fade-in-view">
+				<p>This updated, ground-level condo delivers the rare combination of two true primary suites and a surprisingly large outdoor footprint. Inside, you get new LVP flooring, ceiling fans throughout, new appliances, and renovated bathrooms.</p>
+				<p>Outside, the wrap-around backyard space opens up real options: a proper garden, room for pets, or an extended patio setup. The courtyard is lush and calm, and your two reserved parking spots sit directly in front of the building for easy daily life.</p>
 			</div>
 		</section>
 
-		<!-- Details Section -->
-		<section class="details-section" aria-label="Property details">
-			<h2 class="section-title">Property Details</h2>
+		<!-- Stats Section -->
+		<section class="stats-section">
+			<div class="section-header fade-in-view">
+				<div class="section-eyebrow">Details</div>
+				<h2 class="section-title">By The Numbers</h2>
+			</div>
 
-			<div class="details-grid">
-				<div class="detail-item fade-in">
-					<span class="detail-number">2</span>
-					<span class="detail-label">Bedrooms</span>
-				</div>
-				<div class="detail-item fade-in">
-					<span class="detail-number">2</span>
-					<span class="detail-label">Bathrooms</span>
-				</div>
-				<div class="detail-item fade-in">
-					<span class="detail-number">949</span>
-					<span class="detail-label">Square Feet</span>
-				</div>
-				<div class="detail-item fade-in">
-					<span class="detail-number">$410</span>
-					<span class="detail-label">HOA / Month</span>
+			<div class="stats-container glass fade-in-view">
+				<div class="stats-grid">
+					<div class="stat-item">
+						<div class="stat-number">2</div>
+						<div class="stat-label">Bedrooms</div>
+					</div>
+					<div class="stat-item">
+						<div class="stat-number">2</div>
+						<div class="stat-label">Bathrooms</div>
+					</div>
+					<div class="stat-item">
+						<div class="stat-number">949</div>
+						<div class="stat-label">Square Feet</div>
+					</div>
+					<div class="stat-item">
+						<div class="stat-number">$410</div>
+						<div class="stat-label">HOA / Month</div>
+					</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- Features Section -->
-		<section class="features-section" aria-label="Premium features">
-			<h2 class="section-title">Premium Features</h2>
+		<section class="features-section">
+			<div class="section-header fade-in-view">
+				<div class="section-eyebrow">Features</div>
+				<h2 class="section-title">Premium Upgrades</h2>
+				<p class="section-subtitle">Every detail carefully considered</p>
+			</div>
 
-			<div class="features-container">
-				<div class="feature-category fade-in">
+			<div class="features-grid">
+				<div class="feature-category glass fade-in-view">
 					<h3>Interior Upgrades</h3>
 					<ul>
 						<li>Two primary suites with large bedrooms</li>
@@ -169,7 +173,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						<li>Newly renovated bathrooms</li>
 					</ul>
 				</div>
-				<div class="feature-category fade-in">
+				<div class="feature-category glass fade-in-view">
 					<h3>Windows &amp; Access</h3>
 					<ul>
 						<li>New dual pane vinyl windows</li>
@@ -177,7 +181,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						<li>Ground level for easy access</li>
 					</ul>
 				</div>
-				<div class="feature-category fade-in">
+				<div class="feature-category glass fade-in-view">
 					<h3>Outdoor Space</h3>
 					<ul>
 						<li>Large wrap-around backyard space</li>
@@ -185,7 +189,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						<li>Well planted tranquil courtyard feel</li>
 					</ul>
 				</div>
-				<div class="feature-category fade-in">
+				<div class="feature-category glass fade-in-view">
 					<h3>Parking &amp; Location</h3>
 					<ul>
 						<li>Two reserved parking spots directly in front</li>
@@ -198,24 +202,30 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 		<!-- Contact Section -->
 		<section class="contact-section" id="contact" aria-label="Schedule a showing">
-			<h2 class="section-title">Schedule a Showing</h2>
-			<p class="section-subtitle"><a href="https://calendly.com/yourpropertysd/8020-lvr-showings">Schedule a viewing</a></p>
+			<div class="section-header fade-in-view">
+				<div class="section-eyebrow">Contact</div>
+				<h2 class="section-title">Schedule a Showing</h2>
+				<p class="section-subtitle">Reach out for a showing, disclosures, or any questions</p>
+			</div>
 
-			<div class="contact-info">
-				<div class="contact-item fade-in">
-					<div class="contact-label">Contact Name</div>
-					<div class="contact-value">David Chon</div>
+			<div class="contact-container">
+				<div class="contact-grid">
+					<div class="contact-card glass fade-in-view">
+						<div class="contact-label">Contact Name</div>
+						<div class="contact-value">David Chon</div>
+					</div>
+					<div class="contact-card glass fade-in-view">
+						<div class="contact-label">Text Messages</div>
+						<div class="contact-value"><a href="sms:858-215-4192">858-215-4192</a></div>
+					</div>
+					<div class="contact-card glass fade-in-view">
+						<div class="contact-label">Email</div>
+						<div class="contact-value"><a href="mailto:david.chon@yourpropertysd.com">david.chon@yourpropertysd.com</a></div>
+					</div>
 				</div>
-				<div class="contact-item fade-in">
-					<div class="contact-label">Text Messages</div>
-					<div class="contact-value"><a href="sms:858-215-4192">858-215-4192</a></div>
-				</div>
-				<div class="contact-item fade-in">
-					<div class="contact-label">Email</div>
-					<div class="contact-value"><a href="mailto:david.chon@yourpropertysd.com">david.chon@yourpropertysd.com</a></div>
-				</div>
-				<div class="showing-note">
-					<strong>Showings by appointment only</strong><br />
+
+				<div class="showing-note fade-in-view">
+					<strong>Showings by appointment only</strong>
 					Proof of funds or lender pre-approval requested for showings
 				</div>
 			</div>
@@ -228,22 +238,49 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 				anchor.addEventListener('click', function (e) {
 					e.preventDefault();
-					const href = anchor.getAttribute('href');
-					if (href) {
-						const target = document.querySelector(href);
-						if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+					const target = document.querySelector(this.getAttribute('href'));
+					if (target) {
+						target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 					}
 				});
 			});
 
-			// Scroll animations
-			const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+			// Intersection Observer for scroll animations
+			const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -80px 0px' };
 			const observer = new IntersectionObserver((entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) entry.target.classList.add('visible');
+				entries.forEach((entry, index) => {
+					if (entry.isIntersecting) {
+						setTimeout(() => entry.target.classList.add('visible'), index * 50);
+					}
 				});
 			}, observerOptions);
-			document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+			document.querySelectorAll('.fade-in-view').forEach((el) => observer.observe(el));
+
+			// Parallax effect for hero
+			(function () {
+				const hero = document.querySelector('.hero');
+				const heroContent = document.querySelector('.hero-content');
+				const heroOverlay = document.querySelector('.hero-overlay');
+				if (!hero || !heroContent) return;
+				let ticking = false;
+				function update() {
+					ticking = false;
+					const scrolled = window.pageYOffset || document.documentElement.scrollTop || 0;
+					const heroHeight = hero.offsetHeight || 0;
+					heroContent.style.transform = `translateY(${scrolled * 0.15}px)`;
+					if (heroOverlay) {
+						const progress = heroHeight ? Math.min(Math.max(scrolled / heroHeight, 0), 1) : 0;
+						heroOverlay.style.opacity = String(Math.min(0.15 + progress * 0.55, 1));
+					}
+				}
+				function onScroll() {
+					if (ticking) return;
+					ticking = true;
+					window.requestAnimationFrame(update);
+				}
+				window.addEventListener('scroll', onScroll, { passive: true });
+				update();
+			})();
 		</script>
 	</body>
 </html>

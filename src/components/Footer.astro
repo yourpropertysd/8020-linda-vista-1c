@@ -3,16 +3,17 @@ const today = new Date();
 ---
 
 <footer class="site-footer">
-	<p>&copy; {today.getFullYear()} Your Property San Diego. All rights reserved.</p>
+	<p>© {today.getFullYear()} Your Property San Diego. All rights reserved.</p>
 </footer>
 <style>
 	.site-footer {
-		padding: 3rem 5%;
-		background: #1A1A1A;
-		color: rgba(255, 255, 255, 0.5);
+		padding: 40px 5%;
 		text-align: center;
-		font-size: 0.9rem;
+		color: var(--text-secondary, #6B8AA6);
+		font-size: 14px;
+		border-top: 1px solid rgba(0, 0, 0, 0.05);
 		margin: 0;
+		background: transparent;
 	}
 	.site-footer p {
 		margin: 0;
