@@ -3,6 +3,33 @@ import BaseHead from '../components/BaseHead.astro';
 import { SITE_DESCRIPTION } from '../consts';
 import '../styles/home.css';
 const pageTitle = '8020 Linda Vista Rd, Unit 1C - San Diego';
+const imageModules = import.meta.glob('./images/*.{jpg,jpeg,png,webp}', {
+	eager: true,
+	import: 'default'
+}) as Record<string, string>;
+const gallerySizePattern = ['large', 'medium', 'medium', 'small', 'small'] as const;
+const formatImageLabel = (filePath: string) =>
+	filePath
+		.split('/')
+		.pop()
+		?.replace(/\.[^.]+$/, '')
+		.replace(/[_-]+/g, ' ')
+		.replace(/([a-z])([A-Z])/g, '$1 $2')
+		.replace(/(\D)(\d+)/g, '$1 $2')
+		.replace(/\s+/g, ' ')
+		.trim()
+		.replace(/\b\w/g, (char) => char.toUpperCase()) ?? 'Gallery Image';
+const galleryImages = Object.entries(imageModules)
+	.sort(([leftPath], [rightPath]) => leftPath.localeCompare(rightPath))
+	.map(([path, src], index) => {
+		const label = formatImageLabel(path);
+		return {
+			src,
+			label,
+			alt: label,
+			sizeClass: gallerySizePattern[index % gallerySizePattern.length]
+		};
+	});
 ---
 
 <!doctype html>
@@ -38,40 +65,14 @@ const pageTitle = '8020 Linda Vista Rd, Unit 1C - San Diego';
 			</div>
 
 			<div class="gallery-grid">
-				<div class="gallery-item large fade-in-view">
-					<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230071e3;stop-opacity:0.2'/%3E%3Cstop offset='100%25' style='stop-color:%2386868b;stop-opacity:0.1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g1)' width='1600' height='1000'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='%231d1d1f' fill-opacity='0.4' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif'%3ELiving Room%3C/text%3E%3C/svg%3E" alt="Living Room">
-					<div class="gallery-label">Living Room</div>
-				</div>
-
-				<div class="gallery-item medium fade-in-view">
-					<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ff6b35;stop-opacity:0.15'/%3E%3Cstop offset='100%25' style='stop-color:%23f7931e;stop-opacity:0.1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g2)' width='1000' height='1000'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='%231d1d1f' fill-opacity='0.4' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif'%3EKitchen%3C/text%3E%3C/svg%3E" alt="Kitchen">
-					<div class="gallery-label">Kitchen</div>
-				</div>
-
-				<div class="gallery-item medium fade-in-view">
-					<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cdefs%3E%3ClinearGradient id='g3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2334c759;stop-opacity:0.15'/%3E%3Cstop offset='100%25' style='stop-color:%2330d158;stop-opacity:0.1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g3)' width='1000' height='1000'/%3E%3Ctext x='50%25' y='50%25' font-size='28' fill='%231d1d1f' fill-opacity='0.4' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif'%3EPrimary Suite 1%3C/text%3E%3C/svg%3E" alt="Primary Suite 1">
-					<div class="gallery-label">Primary Suite 1</div>
-				</div>
-
-				<div class="gallery-item small fade-in-view">
-					<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Cdefs%3E%3ClinearGradient id='g4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23af52de;stop-opacity:0.15'/%3E%3Cstop offset='100%25' style='stop-color:%23bf5af2;stop-opacity:0.1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g4)' width='1200' height='900'/%3E%3Ctext x='50%25' y='50%25' font-size='28' fill='%231d1d1f' fill-opacity='0.4' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif'%3EPrimary Suite 2%3C/text%3E%3C/svg%3E" alt="Primary Suite 2">
-					<div class="gallery-label">Primary Suite 2</div>
-				</div>
-
-				<div class="gallery-item small fade-in-view">
-					<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Cdefs%3E%3ClinearGradient id='g5' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2300c7be;stop-opacity:0.15'/%3E%3Cstop offset='100%25' style='stop-color:%235ac8fa;stop-opacity:0.1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g5)' width='1200' height='900'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='%231d1d1f' fill-opacity='0.4' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif'%3EBathroom%3C/text%3E%3C/svg%3E" alt="Bathroom">
-					<div class="gallery-label">Bathroom</div>
-				</div>
-
-				<div class="gallery-item large fade-in-view">
-					<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000'%3E%3Cdefs%3E%3ClinearGradient id='g6' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2334c759;stop-opacity:0.2'/%3E%3Cstop offset='100%25' style='stop-color:%2330d158;stop-opacity:0.15'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g6)' width='1600' height='1000'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='%231d1d1f' fill-opacity='0.4' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif'%3EWrap-Around Backyard%3C/text%3E%3C/svg%3E" alt="Wrap-Around Backyard">
-					<div class="gallery-label">Wrap-Around Backyard</div>
-				</div>
-
-				<div class="gallery-item medium fade-in-view">
-					<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cdefs%3E%3ClinearGradient id='g7' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ff3b30;stop-opacity:0.15'/%3E%3Cstop offset='100%25' style='stop-color:%23ff2d55;stop-opacity:0.1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g7)' width='1000' height='1000'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='%231d1d1f' fill-opacity='0.4' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif'%3EParking Spots%3C/text%3E%3C/svg%3E" alt="Parking Spots">
-					<div class="gallery-label">Parking Spots</div>
-				</div>
+				{
+					galleryImages.map((image) => (
+						<div class={`gallery-item ${image.sizeClass} fade-in-view`}>
+							<img src={image.src} alt={image.alt} loading="lazy" />
+							<div class="gallery-label">{image.label}</div>
+						</div>
+					))
+				}
 			</div>
 		</section>
 
