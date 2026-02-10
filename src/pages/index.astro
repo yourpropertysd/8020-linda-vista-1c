@@ -66,10 +66,18 @@ const galleryImages = Object.entries(imageModules)
 			<div class="gallery-grid">
 				{
 					galleryImages.map((image) => (
-						<div class={`gallery-item ${image.sizeClass} fade-in-view`}>
+						<button
+							type="button"
+							class={`gallery-item ${image.sizeClass} fade-in-view`}
+							data-lightbox-src={image.src}
+							data-lightbox-alt={image.alt}
+							data-lightbox-label={image.label}
+							aria-label={`Open image: ${image.label}`}
+							aria-haspopup="dialog"
+						>
 							<img src={image.src} alt={image.alt} loading="lazy" />
 							<div class="gallery-label">{image.label}</div>
-						</div>
+						</button>
 					))
 				}
 			</div>
@@ -254,6 +262,17 @@ const galleryImages = Object.entries(imageModules)
 		<footer>
 			<p>© 2026 Your Property San Diego. All rights reserved.</p>
 		</footer>
+
+		<div class="gallery-lightbox" data-gallery-lightbox hidden>
+			<div class="gallery-lightbox-backdrop" data-lightbox-close tabindex="-1"></div>
+			<div class="gallery-lightbox-content" role="dialog" aria-modal="true" aria-label="Expanded gallery image">
+				<button type="button" class="gallery-lightbox-close" data-lightbox-close aria-label="Close expanded image">
+					<span aria-hidden="true">X</span>
+				</button>
+				<img class="gallery-lightbox-image" data-lightbox-image src="" alt="" />
+				<div class="gallery-lightbox-caption" data-lightbox-caption></div>
+			</div>
+		</div>
 
 		<script>
 			import '../scripts/home';
