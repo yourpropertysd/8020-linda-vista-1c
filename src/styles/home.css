@@ -134,7 +134,7 @@ body {
 .hero h1 {
   font-size: clamp(48px, 8vw, 96px);
   font-weight: 600;
-  line-height: 1.0834933333;
+  line-height: 1.1;
   letter-spacing: -0.015em;
   margin-bottom: 16px;
   background: linear-gradient(135deg, #1A3554 0%, #5FA3B8 100%);
@@ -490,6 +490,13 @@ body.gallery-lightbox-open {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
+}
+
+.stats-footnote {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary);
 }
 
 .stat-item {
