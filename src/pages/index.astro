@@ -3,10 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import { SITE_DESCRIPTION } from '../consts';
 import '../styles/home.css';
 const pageTitle = '8020 Linda Vista Rd, Unit 1C - San Diego';
-const imageModules = import.meta.glob('./images/*.{jpg,jpeg,png,webp}', {
-	eager: true,
-	import: 'default'
-}) as Record<string, string>;
+const imageModules = import.meta.glob('./images/*.{jpg,jpeg,png,webp}', { eager: true });
 const gallerySizePattern = ['large', 'medium', 'medium', 'small', 'small'] as const;
 const formatImageLabel = (filePath: string) =>
 	filePath
@@ -21,7 +18,9 @@ const formatImageLabel = (filePath: string) =>
 		.replace(/\b\w/g, (char) => char.toUpperCase()) ?? 'Gallery Image';
 const galleryImages = Object.entries(imageModules)
 	.sort(([leftPath], [rightPath]) => leftPath.localeCompare(rightPath))
-	.map(([path, src], index) => {
+	.map(([path, moduleValue], index) => {
+		const imageValue = (moduleValue as { default: { src: string } | string }).default;
+		const src = typeof imageValue === 'string' ? imageValue : imageValue.src;
 		const label = formatImageLabel(path);
 		return {
 			src,
